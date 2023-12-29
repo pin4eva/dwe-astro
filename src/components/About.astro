@@ -24,7 +24,9 @@ import { Image } from "astro:assets";
           be your guide to making the best financial decisions
         </p>
         <div>
-          <button class="btn btn-primary chat-us d-flex align-items-center gap-2">
+          <button
+            class="btn btn-primary chat-us d-flex align-items-center gap-2"
+          >
             <Image
               src={WhatsAppIcon}
               alt="whatsapp icon"
@@ -54,6 +56,17 @@ import { Image } from "astro:assets";
         grid-template-columns: 1fr 1fr;
       }
 
+      &-image {
+        .money-wrap {
+          width: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+
       &-content {
         display: grid;
         align-items: center;
@@ -68,16 +81,8 @@ import { Image } from "astro:assets";
         p {
           margin-block: 38px;
           margin-bottom: 96px;
-        }
-      }
-      &-image {
-        .money-wrap {
-          width: 100%;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-          }
+          line-height: 193.5%; /* 34.83px */
+          letter-spacing: 0.18px;
         }
       }
     }
