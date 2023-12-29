@@ -40,7 +40,7 @@ import WhatsAppIcon from "../images/whatsapp.svg";
   .hero {
     color: white;
     background-color: var(--green-dark);
-    min-height: 80dvh;
+    min-height: 100dvh;
     display: grid;
     align-items: center;
 
@@ -49,13 +49,14 @@ import WhatsAppIcon from "../images/whatsapp.svg";
       grid-template-columns: 1fr;
       @media screen and (min-width: 768px) {
         grid-template-columns: 50% 50%;
+        align-items: center;
       }
     }
     &-content {
       display: flex;
       align-items: center;
       &-inner {
-        // max-width: 601px;
+        padding-top: 4rem;
         h1 {
           line-height: normal;
           font-weight: 700;
@@ -74,7 +75,6 @@ import WhatsAppIcon from "../images/whatsapp.svg";
             font-size: 24px;
           }
         }
-        
       }
     }
     &-image {
