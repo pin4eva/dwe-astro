@@ -1,0 +1,56 @@
+---
+const navList = [
+	{ name: 'Home', href: '/' },
+	{ name: 'About', href: '#about' },
+	{ name: 'Services', href: '#services' },
+	{ name: 'Contact', href: '#contact' },
+]
+---
+
+<header>
+	<nav class="container">
+		<div>
+			<a class="logo" href="/"> DWE</a>
+		</div>
+
+		<ul class="nav">
+			{
+				navList.map(({ href, name }) => (
+					<li class="nav-item">
+						<a href={href} class="nav-link">
+							{name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</header>
+
+<style lang="scss">
+	header {
+		height: 5vh;
+		display: grid;
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	nav {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		font-weight: 600;
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: none;
+
+			@media screen and (min-width: 768px) {
+				display: flex;
+				width: 545px;
+				justify-content: space-between;
+			}
+		}
+	}
+</style>
