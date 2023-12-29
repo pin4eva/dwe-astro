@@ -1,0 +1,65 @@
+---
+
+---
+
+<div class="community">
+  <div class="container d-flex flex-column align-items-center">
+    <div class="text-center">
+      <h2>Join Our Community</h2>
+      <p>
+        Contact us today to join the moving train of financial freedom.
+        Subscribe to our newsletters to receive current information in your
+        inbox
+      </p>
+    </div>
+
+    <form class="form">
+      <input type="text" />
+      <button class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<style lang="scss">
+  .community {
+    padding-block: 83px;
+    h2 {
+      font-weight: 800;
+      color: var(--text-color);
+      margin-bottom: 12px;
+    }
+    p {
+      color: var(--text-color);
+      margin-bottom: 32px;
+      @media screen and (min-width: 768px) {
+        max-width: 617px;
+        width: 100%;
+      }
+    }
+
+    .form {
+      border-radius: 12px;
+      border: 1px solid #000;
+      max-width: 667px;
+      width: 100%;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      input {
+        width: 100%;
+        border: 0;
+        margin-left: 24px;
+        margin-right: 24px;
+        font-size: 14px;
+        letter-spacing: 0.14px;
+        &:focus {
+          outline: 0;
+        }
+      }
+      .btn{
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+</style>
