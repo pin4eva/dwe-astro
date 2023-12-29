@@ -1,56 +1,74 @@
 ---
+import { Image } from "astro:assets";
+import MenuIcon from "../images/menu-btn.svg";
+
 const navList = [
-	{ name: 'Home', href: '/' },
-	{ name: 'About', href: '#about' },
-	{ name: 'Services', href: '#services' },
-	{ name: 'Contact', href: '#contact' },
-]
+  { name: "Home", href: "/" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Contact", href: "#contact" },
+];
 ---
 
 <header>
-	<nav class="container">
-		<div>
-			<a class="logo" href="/"> DWE</a>
-		</div>
+  <nav class="container">
+    <div class="logo">
+      <a href="/"> DWE</a>
+    </div>
 
-		<ul class="nav">
-			{
-				navList.map(({ href, name }) => (
-					<li class="nav-item">
-						<a href={href} class="nav-link">
-							{name}
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</nav>
+    <!-- <div class="menu-btn">
+      <Image src={MenuIcon} alt="menu button" width={35} height={35} />
+    </div> -->
+
+    <ul class="nav">
+      {
+        navList.map(({ href, name }) => (
+          <li class="nav-item">
+            <a href={href} class="nav-link">
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </header>
 
 <style lang="scss">
-	header {
-		height: 5vh;
-		display: flex;
-	}
-	a {
-		text-decoration: none;
-		color: inherit;
-	}
-	nav {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		font-weight: 600;
-		ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			display: none;
+  header {
+    display: flex;
+    align-items: center;
+    height: 50px;
+		background-color: var(--green-dark);
+		color: #fff;
 
-			@media screen and (min-width: 768px) {
-				display: flex;
-				width: 545px;
-				justify-content: space-between;
-			}
+    @media screen and (min-width: 768px) {
+      height: 70px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  nav {
+    display: grid;
+		align-items: center;
+    grid-template-columns: 1fr auto;
+    font-weight: 600;
+		.logo{
+			font-size: 24px;
 		}
-	}
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        display: flex;
+        width: 545px;
+        justify-content: space-between;
+      }
+    }
+  }
 </style>
