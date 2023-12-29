@@ -4,8 +4,8 @@ import HeroImage from "../images/hero-image.png";
 import WhatsAppIcon from "../images/whatsapp.svg";
 ---
 
-<div class="hero ">
-  <div class="inner container">
+<div class="hero">
+  <div class="container">
     <section class="hero-section">
       <div class="hero-content">
         <div class="hero-content-inner">
@@ -16,18 +16,18 @@ import WhatsAppIcon from "../images/whatsapp.svg";
           </p>
 
           <button
-            class="btn btn-primary fw-bold d-flex align-items-center gap-1"
+            class="chat-us btn btn-primary fw-bold d-flex align-items-center gap-2"
           >
             <Image
               src={WhatsAppIcon}
               alt="whatsapp icon"
-              height="20"
-              width="20"
+              height="24"
+              width="24"
             /> Chat with Us</button
           >
         </div>
       </div>
-      <div class="hero-image d-none d-md-block">
+      <div class="hero-image d-none d-md-flex">
         <div class="image-wrap">
           <Image src={HeroImage} alt="Hero-image" />
         </div>
@@ -47,39 +47,42 @@ import WhatsAppIcon from "../images/whatsapp.svg";
     &-section {
       display: grid;
       grid-template-columns: 1fr;
-      // gap: 2rem;
       @media screen and (min-width: 768px) {
         grid-template-columns: 50% 50%;
       }
     }
-
     &-content {
-      flex: 1;
       display: flex;
       align-items: center;
       &-inner {
         // max-width: 601px;
         h1 {
-          font-size: 3rem;
-          line-height: 72px;
+          line-height: normal;
           font-weight: 700;
           letter-spacing: 0.96px;
+          font-size: 36px;
+          @media screen and (min-width: 768px) {
+            font-size: 3rem;
+          }
         }
         p {
-          font-size: 24px;
+          font-size: 18px;
           letter-spacing: 0.48px;
           font-weight: 300;
+          margin-bottom: 86px;
+          @media screen and (min-width: 768px) {
+            font-size: 24px;
+          }
         }
+        
       }
     }
     &-image {
-      display: none;
       @media screen and (min-width: 768px) {
-        display: flex;
-				
+        justify-content: center;
+        width: 100%;
       }
       .image-wrap {
-				margin-left: auto;
         width: 538px;
         height: 416px;
         flex-shrink: 0;

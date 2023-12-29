@@ -3,25 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Header from "../components/Header.astro";
 import About from "../components/About.astro";
+import Services from "../components/Services.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Dream Wealth Enterprise">
   <Header />
   <Hero />
   <About />
-
-  <div id="services" class="services container">
-    <div class="text-center">
-      <h2>Our Key Elements</h2>
-      <p>Putting you in charge of your finances</p>
-    </div>
-  </div>
+  <Services />
 </Layout>
-
-<style lang="scss">
-  h2 {
-    font-weight: 800;
-  }
-
-  
-</style>

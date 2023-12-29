@@ -1,0 +1,74 @@
+---
+import Card from "./Card.astro";
+import Image1 from "../images/towfiqu-barbhuiya-0ITvgXAU5Oo-unsplash 1.png";
+import Image2 from "../images/food-box-wooden-background 1.png";
+import Image3 from "../images/taylor-grote-UiVe5QvOhao-unsplash 1.png";
+
+const serviceList = [
+  {
+    title: "Daily Savings",
+    content: "Record of your daily savings",
+    href: "",
+    image: Image1,
+  },
+  {
+    title: "Food Banking",
+    content:
+      "Collection of your daily, weekly amd monthly contributions for foodstuff",
+    href: "",
+    image: Image2,
+  },
+  {
+    title: "Loan Savings",
+    content: "Loan plans that will enable you run personal projects",
+    href: "",
+    image: Image3,
+  },
+];
+---
+
+<div id="services" class="services">
+  <div class="container">
+    <div class="text-center">
+      <h2>Our Key Elements</h2>
+      <p>Putting you in charge of your finances</p>
+    </div>
+    <div class="card-grid">
+      {
+        serviceList.map(({ title, content, href, image }) => (
+          <Card title={title} content={content} href={href} image={image} />
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .services {
+    padding-bottom: 120px;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 178px;
+    }
+    h2 {
+      font-weight: 800;
+      color: var(--text-color);
+    }
+    p {
+      font-weight: 500;
+      color: var(--text-color);
+      margin-bottom: 60px;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 128px;
+      }
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 42px;
+      @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+</style>

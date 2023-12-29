@@ -16,9 +16,9 @@ const navList = [
       <a href="/"> DWE</a>
     </div>
 
-    <!-- <div class="menu-btn">
-      <Image src={MenuIcon} alt="menu button" width={35} height={35} />
-    </div> -->
+    <div class="menu-btn">
+      <Image src={MenuIcon} alt="menu button" width={26} height={26} />
+    </div>
 
     <ul class="nav">
       {
@@ -38,12 +38,12 @@ const navList = [
   header {
     display: flex;
     align-items: center;
-    height: 50px;
-		background-color: var(--green-dark);
-		color: #fff;
+    height: 70px;
+    background-color: var(--green-dark);
+    color: #fff;
 
     @media screen and (min-width: 768px) {
-      height: 70px;
+      height: 80px;
     }
   }
   a {
@@ -51,13 +51,25 @@ const navList = [
     color: inherit;
   }
   nav {
-    display: grid;
-		align-items: center;
-    grid-template-columns: 1fr auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-weight: 600;
-		.logo{
-			font-size: 24px;
-		}
+    .logo {
+      font-size: 24px;
+    }
+
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
     ul {
       list-style: none;
       padding: 0;
