@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import PersonImg from "../images/towfiqu-barbhuiya-0ITvgXAU5Oo-unsplash 1.png";
+---
+
+<div class="testimonials">
+  <div class="container">
+    <div class="text-center">
+      <h2>Testimonials</h2>
+      <p>The success stories of our clients through their journey with us</p>
+    </div>
+    <div class="swiper">
+      <div class="swiper-slide">
+        <div class="img-wrap">
+          <Image src={PersonImg} alt="" />
+        </div>
+        <p>
+          Since I started using Diamond Wealth Enterprise, my finances has beeb
+          a force to reckon with. I'm able to track my money through their
+          savings plan.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .testimonials {
+    padding-bottom: 120px;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 178px;
+    }
+
+    h2 {
+      font-weight: 800;
+      color: var(--text-color);
+    }
+    p {
+      font-weight: 500;
+      color: var(--text-color);
+      margin-bottom: 60px;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 128px;
+      }
+    }
+
+    .swiper {
+      .swiper-slide {
+        .img-wrap {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          overflow: hidden;
+          img{
+            width: 100%;
+            height: 100%;
+            
+          }
+        }
+      }
+    }
+  }
+</style>
