@@ -34,15 +34,17 @@ const faqData = [
                   <button class="collapsed btn "
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target={}
-
+                  data-bs-target={`#flush-collapse1`}
+                  aria-expanded="false"
+                    aria-controls={`flush-collapse1`}
                   >
                   {question}
+                  <i class="fa fa-plus" />
                   </button>
                   </div>
 
                   <div 
-                  id={`#flush-collapse`}
+                  id={`flush-collapse1`}
                   class="accordion-collapse collapse "
                   data-bs-parent="#accordionFlushExample"
                   >
@@ -91,6 +93,7 @@ const faqData = [
       }
       .img-wrap{
         width: 100%;
+        height: 300px;
         overflow: hidden;
         @media screen and (min-width: 768px) {
           width: 100%;
@@ -117,6 +120,8 @@ const faqData = [
                 letter-spacing: 0.18px;
                 width: 100%;
                 display: flex;
+                justify-content: space-between;
+                align-items: center;
               }
 
             }
