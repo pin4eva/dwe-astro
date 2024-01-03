@@ -1,0 +1,208 @@
+---
+import { Image } from "astro:assets";
+import LoanImage from "../images/Group 1.png";
+import FoodImage from "../images/food-box-wooden-background 1.png";
+---
+
+<div class="key-services">
+  <section class="daily-savings" id="daily-savings">
+    <div class="heading container">
+      <h2>Daily Savings</h2>
+      <p>Start saving smarter today</p>
+    </div>
+    <div class="content">
+      <p class="container">
+        One of the best ways to save money is to set a goal. Start by thinking
+        about what you might want to save for - both in the short term (one to
+        three years) and the long term (four or more years). Then estimate how
+        much money you’ll need and how long it might take you to save it. Your
+        savings can be the answer to a number of your goals. You can buy a
+        house, accumulate funds for retirement or purchase a vehicle. You can
+        secure your future, indulge in the best of things that life has to offer
+        and live a very fulfilling life.
+      </p>
+    </div>
+  </section>
+  <section class="loan-services" id="loan-services">
+    <div class="container">
+      <div class="row loan-inner">
+        <div class="loan-left">
+          <div class="img-wrap">
+            <Image src={LoanImage} alt="" />
+          </div>
+        </div>
+        <div class="loan-right">
+          <h2>Loan Services</h2>
+          <p>
+            Figma ipsum component variant main layer. Bold connection community
+            arrow outline prototype union. Thumbnail strikethrough ellipse
+            variant object plugin stroke pixel auto team. Invite font flows
+            arrow horizontal align flatten plugin draft. Text vertical
+            strikethrough list background move community bullet create
+            strikethrough. Pen group list shadow background. Figma stroke slice
+            shadow underline asset overflow export figma horizontal. Image
+            outline.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="food-banking" id="food-banking">
+    <div class="container">
+      <div class="food-inner">
+        <div class="food-left">
+          <h2>Food Banking</h2>
+          <p>
+            With our food bank plan, you will not experience food insecurity.
+            You will have consistent access to adequate food for active healthy
+            lives for all household members. <br />
+             With our food bank plan, you will not experience food insecurity.
+            You will have consistent access to adequate food for active healthy
+            lives for all household members.
+          </p>
+        </div>
+        <div class="food-right">
+          <div class="img-wrap">
+            <Image src={FoodImage} alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style lang="scss">
+  .key-services {
+    .daily-savings {
+      background: url("../images/towfiqu-barbhuiya-0ITvgXAU5Oo-unsplash\ 1\ \(1\).png")
+        no-repeat;
+      background-size: cover;
+      color: #fff;
+      padding-block: 80px;
+      padding-bottom: 130px;
+      margin-bottom: 65px;
+      .heading {
+        h2 {
+          font-weight: 800;
+          letter-spacing: 0.32px;
+        }
+        p {
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 0.24px;
+          margin-bottom: 2rem;
+          @media screen and (min-width: 768px) {
+            font-size: 18px;
+          }
+        }
+      }
+      .content {
+        background: rgba(0, 0, 0, 0.6);
+        padding-block: 0.5rem;
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 228%; /* 45.6px */
+          letter-spacing: 0.2px;
+          @media screen and (min-width: 768px) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .loan-services {
+      padding-block: 72px;
+      .loan-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        @media screen and (min-width: 768px) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 107px;
+        }
+        .loan-left {
+          display: flex;
+          justify-content: center;
+          .img-wrap {
+            width: 80%;
+            @media screen and (min-width: 768px) {
+              width: 100%;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+        .loan-right {
+          h2 {
+            font-weight: 800;
+            line-height: normal;
+            letter-spacing: 0.64px;
+            margin-bottom: 38px;
+            @media screen and (min-width: 768px) {
+              margin-bottom: 46px;
+            }
+          }
+          p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 193.5%; /* 34.83px */
+            letter-spacing: 0.18px;
+            @media screen and (min-width: 768px) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+    .food-banking {
+      padding-block: 72px;
+      .food-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        @media screen and (min-width: 768px) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 107px;
+        }
+        .food-left {
+          h2 {
+            font-weight: 800;
+            line-height: normal;
+            letter-spacing: 0.64px;
+            margin-bottom: 38px;
+            @media screen and (min-width: 768px) {
+              margin-bottom: 46px;
+            }
+          }
+          p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 193.5%; /* 34.83px */
+            letter-spacing: 0.18px;
+            @media screen and (min-width: 768px) {
+              font-size: 16px;
+            }
+          }
+        }
+        .food-right {
+          display: flex;
+          justify-content: center;
+          .img-wrap {
+            width: 80%;
+            @media screen and (min-width: 768px) {
+              width: 100%;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

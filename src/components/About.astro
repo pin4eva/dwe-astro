@@ -1,0 +1,91 @@
+---
+import Money from "../images/money.png";
+import WhatsAppIcon from "../images/whatsapp.svg";
+import { Image } from "astro:assets";
+---
+
+<div class="about" id="about">
+  <div class="about-inner container">
+    <div class="about-inner-image">
+      <div class="money-wrap">
+        <Image src={Money} alt="money" />
+      </div>
+    </div>
+    <div class="about-inner-content">
+      <div class="content-inner">
+        <h2>Upgrade Your Financial Attainment</h2>
+        <p>
+          We’ve built a method that creates a realistic monthly budget plan,
+          which will help build up your savings. Through the daily contribution
+          plan we’ve put in place, you can start an investment strategy to max
+          out your retirement funds and stock up food items for your household.
+          From our flexible loan plan, you can choose a wide range of simple and
+          straightforward loan offers for personal needs and projects. So let’s
+          be your guide to making the best financial decisions
+        </p>
+        <div>
+          <button
+            class="btn btn-primary chat-us d-flex align-items-center gap-2"
+          >
+          <i class="fa-brands fa-whatsapp fs-4"></i>  
+          Send Us a Message</button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .about {
+    display: grid;
+    align-items: center;
+    padding: 120px 0;
+    @media screen and (min-width: 768px) {
+      padding: 178px 0;
+    }
+    &-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      &-image {
+        .money-wrap {
+          width: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+
+      &-content {
+        display: grid;
+        align-items: center;
+        color: var(--text-color);
+
+        h2 {
+          font-size: 32px;
+          font-weight: 800;
+          line-height: normal;
+        }
+
+        p {
+          margin-block: 38px;
+          margin-bottom: 96px;
+          line-height: 193.5%; /* 34.83px */
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0.18px;
+          @media screen and (min-width: 768px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+</style>

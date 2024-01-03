@@ -1,93 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Hero from '../components/Hero.astro'
-import Header from '../components/Header.astro'
-import Money from '../images/money.png'
-import WhatsAppIcon from '../images/whatsapp.svg'
-import { Image } from 'astro:assets'
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Header from "../components/Header.astro";
+import About from "../components/About.astro";
+import Services from "../components/Services.astro";
+import Testimonials from "../components/Testimonials.astro";
+import KeyServices from "../components/KeyServices.astro";
+import Faqs from "../components/Faqs.astro";
+import Community from "../components/Community.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<div class="hero">
-		<Header />
-		<Hero />
-	</div>
-
-	<div class="about container" id="about">
-		<div class="about-inner">
-			<div class="about-inner-image">
-				<Image src={Money} alt="money" />
-			</div>
-			<div class="about-inner-content">
-				<div class="content-inner">
-					<h2>Upgrade Your Financial Attainment</h2>
-					<p>
-						We’ve built a method that creates a realistic monthly budget plan,
-						which will help build up your savings. Through the daily
-						contribution plan we’ve put in place, you can start an investment
-						strategy to max out your retirement funds and stock up food items
-						for your household. From our flexible loan plan, you can choose a
-						wide range of simple and straightforward loan offers for personal
-						needs and projects. So let’s be your guide to making the best
-						financial decisions
-					</p>
-					<div>
-						<button class="btn btn-primary">
-							<Image
-								src={WhatsAppIcon}
-								alt="whatsapp icon"
-								height="32"
-								width="32"
-							/> Chat with Us</button
-						>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="services" class="services container">
-		<div class="text-center">
-			<h2>Our Key Elements</h2>
-			<p>Putting you in charge of your finances</p>
-		</div>
-	</div>
+<Layout title="Dream Wealth Enterprise">
+  <Header />
+  <Hero />
+  <About />
+  <Services />
+  <Testimonials />
+  <KeyServices />
+  <Faqs />
+  <Community />
+  <Footer />
 </Layout>
-
-<style lang="scss">
-	h2 {
-		font-weight: 800;
-	}
-	.hero {
-		color: white;
-		background-color: var(--green-dark);
-	}
-
-	.about {
-		min-height: 80vh;
-		display: grid;
-		align-items: center;
-		&-inner {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 2rem;
-			@media screen and (min-width: 768px) {
-				grid-template-columns: 1fr 1fr;
-			}
-
-			&-content {
-				display: grid;
-				align-items: center;
-
-				p {
-					margin-block: 38px;
-				}
-			}
-			&-image {
-				img {
-					width: 100%;
-				}
-			}
-		}
-	}
-</style>

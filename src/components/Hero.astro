@@ -1,80 +1,96 @@
 ---
-import { Image } from 'astro:assets'
-import HeroImage from '../images/hero-image.png'
-import WhatsAppIcon from '../images/whatsapp.svg'
+import { Image } from "astro:assets";
+import HeroImage from "../images/hero-image.png";
+import WhatsAppIcon from "../images/whatsapp.svg";
 ---
 
-<div class="hero container">
-	<div class="inner">
-		<section class="hero-section">
-			<div class="hero-content">
-				<div class="hero-content-inner">
-					<h1>Your Path to Financial Freedom</h1>
-					<p>
-						Be in control of your money, track your spending effortlessly, and
-						get to your financial goals. Start saving smarter today.
-					</p>
+<div class="hero" id="home">
+  <div class="container">
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-content-inner">
+          <h1>Your Path to Financial Freedom</h1>
+          <p>
+            Be in control of your money, track your spending effortlessly, and
+            get to your financial goals. Start saving smarter today.
+          </p>
 
-					<button class="btn btn-primary fw-bold">
-						<Image
-							src={WhatsAppIcon}
-							alt="whatsapp icon"
-							height="32"
-							width="32"
-						/> Chat with Us</button
-					>
-				</div>
-			</div>
-			<div class="hero-image d-none d-md-block">
-				<Image src={HeroImage} alt="Hero-image" />
-			</div>
-		</section>
-	</div>
+          <button
+            class="chat-us btn btn-primary fw-bold d-flex align-items-center gap-2"
+          >
+          <i class="fa-brands fa-whatsapp fs-4"></i>  
+          Chat with Us</button
+          >
+        </div>
+      </div>
+      <div class="hero-image d-none d-md-flex">
+        <div class="image-wrap">
+          <Image src={HeroImage} alt="Hero-image" />
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 
 <style lang="scss">
-	.hero {
-		min-height: 80dvh;
-		display: grid;
-		align-items: center;
+  .hero {
+    color: white;
+    background-color: var(--green-dark);
+    min-height: 100dvh;
+    display: grid;
+    align-items: center;
 
-		&-section {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 61px;
-			@media screen and (min-width: 768px) {
-				grid-template-columns: 50% 50%;
-			}
-		}
-
-		&-content {
-			flex: 1;
-			display: flex;
-			align-items: center;
-			&-inner {
-				max-width: 601px;
-				h1 {
-					font-size: 3rem;
-					line-height: 72px;
-					font-weight: 700;
-					letter-spacing: 0.96px;
-				}
-				p {
-					font-size: 24px;
-					letter-spacing: 0.48px;
-					font-weight: 300;
-				}
-			}
-		}
-		&-image {
-			display: none;
-			@media screen and (min-width: 768px) {
-				display: flex;
-			}
-			img {
-				width: 100%;
-				max-width: 538px;
-			}
-		}
-	}
+    &-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      @media screen and (min-width: 768px) {
+        grid-template-columns: 50% 50%;
+        align-items: center;
+      }
+    }
+    &-content {
+      display: flex;
+      align-items: center;
+      &-inner {
+        padding-top: 4rem;
+        h1 {
+          line-height: normal;
+          font-weight: 700;
+          letter-spacing: 0.96px;
+          font-size: 36px;
+          @media screen and (min-width: 768px) {
+            font-size: 3rem;
+          }
+        }
+        p {
+          font-size: 18px;
+          letter-spacing: 0.48px;
+          font-weight: 300;
+          margin-bottom: 86px;
+          @media screen and (min-width: 768px) {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+    &-image {
+      @media screen and (min-width: 768px) {
+        justify-content: center;
+        width: 100%;
+      }
+      .image-wrap {
+        width: 538px;
+        height: 416px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        border: 1px solid #e6e6e6;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
 </style>

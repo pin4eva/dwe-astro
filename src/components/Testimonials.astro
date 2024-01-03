@@ -1,0 +1,31 @@
+---
+import Carousel from "./Carousel.astro";
+---
+
+<div class="testimonials">
+  <div class="container">
+    <div class="text-center">
+      <h2>Testimonials</h2>
+      <p>The success stories of our clients through their journey with us</p>
+    </div>
+
+    <Carousel />
+  </div>
+</div>
+
+<style lang="scss">
+  .testimonials {
+    padding-bottom: 120px;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 178px;
+    }
+    h2 {
+      font-weight: 800;
+      color: var(--text-color);
+    }
+    p {
+      font-weight: 500;
+      color: var(--text-color);
+    }
+  }
+</style>

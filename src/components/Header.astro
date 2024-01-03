@@ -1,56 +1,137 @@
 ---
 const navList = [
-	{ name: 'Home', href: '/' },
-	{ name: 'About', href: '#about' },
-	{ name: 'Services', href: '#services' },
-	{ name: 'Contact', href: '#contact' },
-]
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Contact", href: "#contact" },
+];
 ---
 
 <header>
-	<nav class="container">
-		<div>
-			<a class="logo" href="/"> DWE</a>
-		</div>
+  <nav class="container">
+    <div class="logo">
+      <a href="/"> DWE</a>
+    </div>
 
-		<ul class="nav">
-			{
-				navList.map(({ href, name }) => (
-					<li class="nav-item">
-						<a href={href} class="nav-link">
-							{name}
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</nav>
+    <div class="menu-btn" id="menu-btn">
+      <i class="fa fa-bars fs-3"></i>
+    </div>
+
+    <ul class="nav" id="nav-links">
+      {
+        navList.map(({ href, name }) => (
+          <li class="nav-item">
+            <a href={href} class="nav-link">
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </header>
 
 <style lang="scss">
-	header {
-		height: 5vh;
-		display: flex;
-	}
-	a {
-		text-decoration: none;
-		color: inherit;
-	}
-	nav {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		font-weight: 600;
-		ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			display: none;
+  header {
+    display: flex;
+    align-items: center;
+    background-color: var(--green-dark);
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  nav {
+    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+      height: 80px;
+    }
+    .logo {
+      font-size: 24px;
+    }
 
-			@media screen and (min-width: 768px) {
-				display: flex;
-				width: 545px;
-				justify-content: space-between;
-			}
-		}
-	}
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      z-index: 10;
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none;
+      &.show {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3rem;
+        padding-block: 2rem;
+        width: 100%;
+        height: 100vh;
+        background: #22371b;
+        font-size: 16px;
+      }
+
+      @media screen and (min-width: 768px) {
+        display: flex;
+        width: 545px;
+        justify-content: space-between;
+        align-items: center;
+        &.show {
+          display: flex;
+          height: 100%;
+          width: 545px;
+          padding-block: 0;
+          background: transparent;
+        }
+      }
+    }
+  }
 </style>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const navLinks = document.getElementById("nav-links");
+
+  if (menuBtn) {
+    const menuBtnIcon = () => {
+      menuBtn.innerHTML = navLinks?.classList.contains("show")
+        ? `<i class="fa fa-times fs-3"></i>`
+        : `<i class="fa fa-bars fs-3"></i>`;
+    };
+
+    menuBtn?.addEventListener("click", () => {
+      navLinks?.classList.toggle("show");
+      menuBtnIcon();
+    });
+
+    const navItems = document.querySelectorAll(".nav-link");
+    navItems.forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks?.classList.remove("show");
+        menuBtnIcon();
+      });
+    });
+  }
+</script>
