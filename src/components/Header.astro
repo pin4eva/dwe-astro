@@ -8,7 +8,7 @@ const navList = [
 ---
 
 <header>
-  <nav class="container">
+  <nav class="container-lg">
     <div class="logo">
       <a href="/"> DWE</a>
     </div>
@@ -56,6 +56,7 @@ const navList = [
     @media screen and (min-width: 768px) {
       height: 80px;
     }
+
     .logo {
       font-size: 24px;
     }
@@ -70,6 +71,9 @@ const navList = [
       z-index: 10;
       @media screen and (min-width: 768px) {
         display: none;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        display: flex;
       }
     }
     ul {
@@ -104,6 +108,27 @@ const navList = [
           width: 545px;
           padding-block: 0;
           background: transparent;
+        }
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        &.show {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 3rem;
+          padding-block: 2rem;
+          width: 100%;
+          height: 100vh;
+          background: #22371b;
+          font-size: 16px;
         }
       }
     }

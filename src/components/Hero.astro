@@ -18,12 +18,12 @@ import WhatsAppIcon from "../images/whatsapp.svg";
           <button
             class="chat-us btn btn-primary fw-bold d-flex align-items-center gap-2"
           >
-          <i class="fa-brands fa-whatsapp fs-4"></i>  
-          Chat with Us</button
+            <i class="fa-brands fa-whatsapp fs-4"></i>
+            Chat with Us</button
           >
         </div>
       </div>
-      <div class="hero-image d-none d-md-flex">
+      <div class="hero-image">
         <div class="image-wrap">
           <Image src={HeroImage} alt="Hero-image" />
         </div>
@@ -43,9 +43,14 @@ import WhatsAppIcon from "../images/whatsapp.svg";
     &-section {
       display: grid;
       grid-template-columns: 1fr;
+      gap: 2rem;
       @media screen and (min-width: 768px) {
         grid-template-columns: 50% 50%;
         align-items: center;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        padding-bottom: 2rem;
       }
     }
     &-content {
@@ -74,9 +79,14 @@ import WhatsAppIcon from "../images/whatsapp.svg";
       }
     }
     &-image {
+      display: none;
       @media screen and (min-width: 768px) {
+        display: flex;
         justify-content: center;
         width: 100%;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        display: none;
       }
       .image-wrap {
         width: 538px;
